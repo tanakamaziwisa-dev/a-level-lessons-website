@@ -125,3 +125,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+const form = document.getElementById("contact-form");
+
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const contact = document.getElementById("contact").value;
+
+    const subject = document.getElementById("subject")?.value || "Not selected";
+    const lessonType = document.getElementById("lessonType")?.value || "Not selected";
+    const city = document.getElementById("city")?.value || "Not provided";
+    const message = document.getElementById("message")?.value || "";
+
+    const whatsappNumber = "263777414157";
+
+    const text =
+      `New lesson enquiry from website:%0A%0A` +
+      `Name: ${name}%0A` +
+      `Contact: ${contact}%0A` +
+      `Subject: ${subject}%0A` +
+      `Lesson type: ${lessonType}%0A` +
+      `City: ${city}%0A%0A` +
+      `Message:%0A${message}`;
+
+    const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+
+    window.open(url, "_blank");
+  });
+}
