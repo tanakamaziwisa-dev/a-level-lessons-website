@@ -1,127 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pricing | Tanaka A-Level Lessons</title>
-    <meta
-      name="description"
-      content="Transparent pricing for online, in-person, and group A-Level tutoring sessions."
-    />
-    <meta property="og:title" content="A-Level Lesson Pricing" />
-    <meta
-      property="og:description"
-      content="Choose from online, in-person, or group lesson packages with flexible scheduling."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://example.com/pricing.html" />
-    <meta property="og:image" content="https://example.com/assets/img/og-image.jpg" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-  </head>
-  <body>
-    <header class="top-bar">
-      <div class="container navbar">
-        <a class="brand" href="index.html">Tanaka A-Level Lessons</a>
-        <nav class="nav-links" aria-label="Primary">
-          <a href="index.html">Home</a>
-          <a href="subjects.html">Subjects</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-        <div class="toggle-wrapper">
-          <button class="toggle-btn" type="button" data-dark-toggle>Dark mode</button>
-          <a class="btn btn-whatsapp" href="https://wa.me/2637XXXXXXXX">Chat on WhatsApp</a>
-        </div>
-      </div>
+<section class="section">
+  <div class="container">
+    <header class="section-header">
+      <h1>Monthly Plans</h1>
+      <p>Simple monthly pricing. Choose a plan that matches your schedule and subjects.</p>
     </header>
 
-    <main>
-      <section class="hero">
-        <div class="container hero-grid">
-          <div>
-            <span class="badge">Pricing</span>
-            <h1>Flexible lesson options for every student.</h1>
-            <p class="muted">Choose the plan that fits your learning style, schedule, and budget.</p>
-          </div>
-          <div class="card fade-in">
-            <h3>Need a custom plan?</h3>
-            <p class="muted">Message us to build a schedule that matches your exam timeline.</p>
-            <a class="btn btn-primary" href="https://wa.me/2637XXXXXXXX">Chat on WhatsApp</a>
-          </div>
-        </div>
-      </section>
+    <div class="pricing-grid">
+      <!-- Starter -->
+      <article class="pricing-card">
+        <h2>Starter (Online)</h2>
+        <p class="price"><span class="amount">$25</span><span class="unit">/ month</span></p>
+        <p class="pricing-subtext">Great for steady support in one subject.</p>
 
-      <section>
-        <div class="container">
-          <div class="grid grid-3">
-            <div class="card fade-in">
-              <h3>Online 1-on-1</h3>
-              <p class="muted">Personalised support for any subject, delivered online.</p>
-              <h4>$X per hour</h4>
-              <ul class="list">
-                <li><span>✓</span>Weekly progress plan</li>
-                <li><span>✓</span>Shared notes &amp; worksheets</li>
-                <li><span>✓</span>WhatsApp support</li>
-              </ul>
-              <a class="btn btn-primary" href="https://wa.me/2637XXXXXXXX">Book online</a>
-            </div>
-            <div class="card fade-in">
-              <h3>In-person 1-on-1</h3>
-              <p class="muted">Limited availability for local students in Zimbabwe.</p>
-              <h4>$X per hour</h4>
-              <ul class="list">
-                <li><span>✓</span>Focused tutoring sessions</li>
-                <li><span>✓</span>Exam strategy coaching</li>
-                <li><span>✓</span>Travel arrangements discussed</li>
-              </ul>
-              <a class="btn btn-primary" href="https://wa.me/2637XXXXXXXX">Book in-person</a>
-            </div>
-            <div class="card fade-in">
-              <h3>Group lessons (2–5 students)</h3>
-              <p class="muted">Learn together and save costs while staying accountable.</p>
-              <h4>$X per hour</h4>
-              <ul class="list">
-                <li><span>✓</span>Small group focus</li>
-                <li><span>✓</span>Interactive activities</li>
-                <li><span>✓</span>Shared revision plan</li>
-              </ul>
-              <a class="btn btn-primary" href="https://wa.me/2637XXXXXXXX">Book group lessons</a>
-            </div>
-          </div>
-          <p class="form-note" style="margin-top: 16px;">
-            Prices may vary by location, lesson frequency, and subject level.
-          </p>
-        </div>
-      </section>
-    </main>
+        <ul class="pricing-list">
+          <li>2 lessons per week (8 lessons/month)</li>
+          <li>1 subject</li>
+          <li>Past paper practice</li>
+          <li>Homework support (WhatsApp questions)</li>
+          <li>Weekly progress tracking</li>
+        </ul>
 
-    <footer>
-      <div class="container footer-grid">
-        <div>
-          <h3>Tanaka A-Level Lessons</h3>
-          <p class="muted">Modern tutoring with flexible pricing options.</p>
-        </div>
-        <div>
-          <h4>Quick Links</h4>
-          <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="subjects.html">Subjects</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-          </div>
-        </div>
-        <div>
-          <h4>Talk to us</h4>
-          <div class="footer-links">
-            <a href="https://wa.me/2637XXXXXXXX">WhatsApp</a>
-            <a href="#">Email (placeholder)</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+        <a class="btn btn-primary"
+           href="https://wa.me/263777414157?text=Hi%20Tanaka,%20I%20want%20to%20join%20the%20Starter%20(Online)%20plan%20($25/month).%20My%20name%20is%20____.%20My%20subject%20is%20____.%20My%20city%20is%20____.%20Please%20send%20payment%20details.">
+          Book Starter
+        </a>
+      </article>
 
-    <button class="back-to-top" type="button" aria-label="Back to top">↑ Top</button>
-    <script src="assets/js/main.js"></script>
-  </body>
-</html>
+      <!-- Standard -->
+      <article class="pricing-card featured">
+        <div class="badge">Most Popular</div>
+        <h2>Standard (Online)</h2>
+        <p class="price"><span class="amount">$40</span><span class="unit">/ month</span></p>
+        <p class="pricing-subtext">Best value for students doing more than one subject.</p>
+
+        <ul class="pricing-list">
+          <li>3 lessons per week (12 lessons/month)</li>
+          <li>Up to 2 subjects</li>
+          <li>Past paper support</li>
+          <li>Exam technique sessions</li>
+          <li>WhatsApp academic support during the week</li>
+        </ul>
+
+        <a class="btn btn-primary"
+           href="https://wa.me/263777414157?text=Hi%20Tanaka,%20I%20want%20to%20join%20the%20Standard%20(Online)%20plan%20($40/month).%20My%20name%20is%20____.%20My%20subjects%20are%20____%20and%20____.%20My%20city%20is%20____.%20Please%20send%20payment%20details.">
+          Book Standard
+        </a>
+      </article>
+
+      <!-- Premium -->
+      <article class="pricing-card">
+        <h2>Premium (Hybrid / In-person)</h2>
+        <p class="price"><span class="amount">$60</span><span class="unit">/ month</span></p>
+        <p class="pricing-subtext">Extra support + optional in-person (location based).</p>
+
+        <ul class="pricing-list">
+          <li>3–4 lessons per week</li>
+          <li>Up to 2 subjects</li>
+          <li>Option for in-person lessons (location based)</li>
+          <li>Personal study plan</li>
+          <li>Intensive past paper sessions</li>
+          <li>Priority scheduling</li>
+        </ul>
+
+        <a class="btn btn-primary"
+           href="https://wa.me/263777414157?text=Hi%20Tanaka,%20I%20want%20to%20join%20the%20Premium%20(Hybrid/In-person)%20plan%20($60/month).%20My%20name%20is%20____.%20My%20subjects%20are%20____.%20My%20location%20is%20____.%20Please%20send%20payment%20details.">
+          Book Premium
+        </a>
+
+        <p class="small-note">In-person availability depends on location.</p>
+      </article>
+    </div>
+
+    <div class="pricing-footnote">
+      <p><strong>Note:</strong> All plans are billed monthly. Lesson schedules are agreed before the start of each month. Prices may vary depending on subject, level, location and lesson frequency.</p>
+    </div>
+  </div>
+</section>
