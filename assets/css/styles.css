@@ -475,4 +475,30 @@ button {
   border-radius: 12px;
   background: rgba(0,0,0,0.04);
 }
+.site-header{
+  text-align: center;
+  padding: 16px 10px;
+}
+
+.site-title{
+  margin-bottom: 10px;
+}
+
+.site-nav{
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav-link{
+  text-decoration: none;
+  color: inherit;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.nav-link:hover{
+  text-decoration: underline;
+}
 
