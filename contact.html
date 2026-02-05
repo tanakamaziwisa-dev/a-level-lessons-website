@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Tanaka A-Level Lessons</title>
+    <meta
+      name="description"
+      content="Contact Tanaka A-Level Lessons to book A-Level tutoring sessions in Zimbabwe."
+    />
+    <meta property="og:title" content="Contact Tanaka A-Level Lessons" />
+    <meta
+      property="og:description"
+      content="Send a message or chat on WhatsApp to book your A-Level lessons." 
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/contact.html" />
+    <meta property="og:image" content="https://example.com/assets/img/og-image.jpg" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="top-bar">
+      <div class="container navbar">
+        <a class="brand" href="index.html">Tanaka A-Level Lessons</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="subjects.html">Subjects</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="toggle-wrapper">
+          <button class="toggle-btn" type="button" data-dark-toggle>Dark mode</button>
+          <a class="btn btn-whatsapp" href="https://wa.me/2637XXXXXXXX">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="badge">Contact</span>
+            <h1>Let’s plan your A-Level success.</h1>
+            <p class="muted">Send a quick message or chat directly on WhatsApp for faster replies.</p>
+            <a class="btn btn-primary" href="https://wa.me/2637XXXXXXXX">Chat on WhatsApp</a>
+          </div>
+          <div class="card fade-in">
+            <h3>Response time</h3>
+            <p class="muted">We reply within 24 hours, Monday to Saturday.</p>
+            <p class="muted">Online lessons available nationwide.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-title">
+            <h2>Contact form</h2>
+            <p class="muted">Tell us what you need and we will tailor your study plan.</p>
+          </div>
+          <form id="contact-form" class="grid grid-2" novalidate>
+            <!-- Personal details -->
+            <div class="form-control">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+            <div class="form-control">
+              <label for="contact">Email or phone</label>
+              <input id="contact" name="contact" type="text" placeholder="you@email.com or 07XXXXXXX" required />
+            </div>
+
+            <!-- Lesson details -->
+            <div class="form-control">
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" placeholder="E.g. Mathematics" required />
+            </div>
+            <div class="form-control">
+              <label for="lesson-type">Lesson type</label>
+              <select id="lesson-type" name="lesson-type" required>
+                <option value="">Select one</option>
+                <option value="online">Online</option>
+                <option value="in-person">In-person</option>
+              </select>
+            </div>
+
+            <div class="form-control">
+              <label for="location">City / Location</label>
+              <input id="location" name="location" type="text" placeholder="Harare" required />
+            </div>
+            <div class="form-control">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us your goals" required></textarea>
+            </div>
+
+            <!-- Submit -->
+            <div class="form-control" style="grid-column: 1 / -1;">
+              <button class="btn btn-primary" type="submit">Send message</button>
+              <p class="form-status form-note" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <h3>Tanaka A-Level Lessons</h3>
+          <p class="muted">Reach out any time to start your lessons.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="subjects.html">Subjects</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="about.html">About</a>
+          </div>
+        </div>
+        <div>
+          <h4>Chat</h4>
+          <div class="footer-links">
+            <a href="https://wa.me/2637XXXXXXXX">WhatsApp</a>
+            <a href="#">Email (placeholder)</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="back-to-top" type="button" aria-label="Back to top">↑ Top</button>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
