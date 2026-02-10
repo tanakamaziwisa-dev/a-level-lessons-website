@@ -6,9 +6,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   // --- Active navigation highlighting ---
   const currentPath = window.location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll(".nav-links a").forEach((link) => {
+  document.querySelectorAll(".site-nav a, .main-nav a").forEach((link) => {
     const href = link.getAttribute("href");
     if (href === currentPath) {
+      document.querySelectorAll(".site-nav a, .main-nav a").forEach((a) => a.classList.remove("active"));
       link.classList.add("active");
     }
   });
