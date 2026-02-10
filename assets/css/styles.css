@@ -536,5 +536,35 @@ button {
   display: block;
   font-weight: 600;
 }
+/* Make navbar links look like the badge/pill style */
+.site-nav .nav-link{
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #eef2ff;   /* soft pill background */
+  color: #1d4ed8;        /* blue text */
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(29, 78, 216, 0.12);
+  transition: transform .08s ease, background .15s ease;
+}
+
+.site-nav .nav-link:hover{
+  background: #e0e7ff;
+  transform: translateY(-1px);
+}
+
+/* Active page pill */
+.site-nav .nav-link.active{
+  background: #1d4ed8;
+  color: white;
+  border-color: rgba(29, 78, 216, 0.35);
+}
+.site-nav{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
 
