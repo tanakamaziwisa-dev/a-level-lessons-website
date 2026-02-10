@@ -117,9 +117,9 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0;
-  gap: 16px;
+  gap: 20px;
 }
+
 
 .brand {
   font-weight: 700;
@@ -560,11 +560,36 @@ button {
   color: white;
   border-color: rgba(29, 78, 216, 0.35);
 }
-.site-nav{
+.site-nav {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1;
+}
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
 }
 
+}
+
+.top-bar {
+  background: #fff;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.top-bar .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .site-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 
