@@ -592,4 +592,35 @@ button {
     justify-content: center;
   }
 }
+/* ===== Header alignment fix (3-column layout) ===== */
+.top-bar .navbar{
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* brand | nav | actions */
+  align-items: center;
+  gap: 18px;
+}
+
+/* Center the pills */
+.top-bar .site-nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;          /* IMPORTANT: lets it shrink */
+  overflow: hidden;      /* prevents pushing the buttons down */
+}
+
+/* Right side buttons stay together */
+.top-bar .toggle-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
+  white-space: nowrap;   /* prevents wrap inside the buttons area */
+}
+
+/* Optional: make pills slightly smaller so they fit better */
+.top-bar .site-nav .nav-link{
+  padding: 9px 14px;
+}
 
