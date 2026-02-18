@@ -68,66 +68,49 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
 
   // --- Contact form validation ---
-  const contactForm = document.querySelector("#contact-form");
-  if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const name = contactForm.querySelector("#name");
-      const contact = contactForm.querySelector("#contact");
-      const subject = contactForm.querySelector("#subject");
-      const lessonType = contactForm.querySelector("#lesson-type");
-      const location = contactForm.querySelector("#location");
-      const message = contactForm.querySelector("#message");
-      const status = contactForm.querySelector(".form-status");
+// --- Unified Contact Form & WhatsApp Logic ---
+const contactForm = document.querySelector("#contact-form");
 
-      const errors = [];
-      if (!name.value.trim()) errors.push("Please enter your name.");
-      if (!contact.value.trim()) {
-        errors.push("Please enter an email or phone number.");
-      } else {
-        const isEmail = /@/.test(contact.value);
-        const isPhone = /\d{7,}/.test(contact.value.replace(/\s+/g, ""));
-        if (!isEmail && !isPhone) {
-          errors.push("Enter a valid email or phone number.");
-        }
-      }
-      if (!subject.value.trim()) errors.push("Please enter a subject.");
-      if (!lessonType.value) errors.push("Please select a lesson type.");
-      if (!location.value.trim()) errors.push("Please enter your city/location.");
-      if (!message.value.trim()) errors.push("Please add a message.");
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-      if (errors.length) {
-        status.textContent = errors.join(" ");
-        status.style.color = "#d93025";
-        return;
-      }
+    // 1. Collect form data
+    const name = document.getElementById("name").value.trim();
+    const contact = document.getElementById("contact").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const lessonType = document.getElementById("lesson-type").value;
+    const location = document.getElementById("location").value.trim(); // Matches your HTML ID
+    const message = document.getElementById("message").value.trim();
+    const status = contactForm.querySelector(".form-status");
 
-      status.textContent = "Thanks! Your message has been received. We'll reply on WhatsApp within 24 hours.";
-      status.style.color = "#1aa96b";
-      contactForm.reset();
-    });
-  }
+    // 2. Simple Validation
+    if (!name || !contact || !subject || !lessonType || !location || !message) {
+      status.textContent = "Please fill in all fields.";
+      status.style.color = "#d93025";
+      return;
+    }
 
-  // --- Email capture form ---
-  const emailForm = document.querySelector("#email-capture");
-  if (emailForm) {
-    emailForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const emailInput = emailForm.querySelector("#email");
-      const status = emailForm.querySelector(".form-status");
-      if (!emailInput.value.trim() || !/@/.test(emailInput.value)) {
-        status.textContent = "Please enter a valid email.";
-        status.style.color = "#d93025";
-        return;
-      }
-      status.textContent = "You're on the list! We'll share exam tips soon.";
-      status.style.color = "#1aa96b";
-      emailForm.reset();
-    });
-  }
-});
-const form = document.getElementById("contact-form");
+    // 3. Construct WhatsApp Message
+    const whatsappNumber = "263777414157";
+    const text = 
+      `New lesson enquiry from website:%0A%0A` +
+      `Name: ${encodeURIComponent(name)}%0A` +
+      `Contact: ${encodeURIComponent(contact)}%0A` +
+      `Subject: ${encodeURIComponent(subject)}%0A` +
+      `Lesson type: ${encodeURIComponent(lessonType)}%0A` +
+      `City: ${encodeURIComponent(location)}%0A%0A` +
+      `Message:%0A${encodeURIComponent(message)}`;
 
+    // 4. Open WhatsApp and Reset
+    const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+    window.open(url, "_blank");
+    
+    status.textContent = "Opening WhatsApp...";
+    status.style.color = "#1aa96b";
+    contactForm.reset();
+  });
+}
 if (form) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
