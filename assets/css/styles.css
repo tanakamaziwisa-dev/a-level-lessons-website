@@ -5,7 +5,7 @@
 */
 
 :root {
-  --bg: #f7f7fb;
+  --bg: #f7f7fb;F
   --bg-alt: #ffffff;
   --text: #1e1f25;
   --muted: #5e6470;
@@ -355,9 +355,10 @@ button {
   transition: 0.6s ease;
 }
 
-.fade-in.visible {
+.fade-in {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
+  transition: 0.6s ease;
 }
 
 @media (min-width: 768px) {
