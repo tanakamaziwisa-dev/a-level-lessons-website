@@ -4,6 +4,20 @@
 */
 
 document.addEventListener("DOMContentLoaded", () => {
+  // --- Mobile Menu Toggle ---
+  const navToggle = document.querySelector('[data-nav-toggle]');
+  const navPanel = document.querySelector('[data-nav-panel]');
+
+  if (navToggle && navPanel) {
+    navToggle.addEventListener('click', () => {
+      // This checks if the menu is currently open or closed
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      
+      // This adds the "active" class we just created in the CSS
+      navPanel.classList.toggle('active');
+    });
+  }
   // --- Active navigation highlighting ---
   const currentPath = window.location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".site-nav a, .main-nav a").forEach((link) => {
@@ -139,3 +153,4 @@ if (form) {
     window.open(url, "_blank");
   });
 }
+  
