@@ -1,4 +1,4 @@
-# Tanaka A-Level Lessons Website
+# Academic Hub A-Level Lessons Website
 
 A modern, mobile-first A-Level tutoring website built with only HTML, CSS, and JavaScript.
 
