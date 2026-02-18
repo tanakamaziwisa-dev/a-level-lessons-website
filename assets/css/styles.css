@@ -371,12 +371,14 @@ button {
   }
 }
 /* ===== Pricing layout (cards side-by-side) ===== */
-.pricing-grid{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  align-items: stretch;
-  margin-top: 18px;
+.pricing-card {
+  background: var(--bg-alt); /* Switches between #ffffff and #171a21 automatically */
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
 }
 
 /* Responsive: 2 columns on medium screens, 1 on small */
@@ -469,11 +471,13 @@ button {
   opacity: 0.8;
 }
 
-.pricing-footnote{
+.pricing-footnote {
   margin-top: 18px;
   padding: 12px 14px;
   border-radius: 12px;
-  background: rgba(0,0,0,0.04);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  color: var(--muted);
 }
 .site-header{
   text-align: center;
