@@ -1,145 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | Academic Hub A-Level Lessons</title>
-    <meta
-      name="description"
-      content="Contact Academic Hub A-Level Lessons to book A-Level tutoring sessions in Zimbabwe."
-    />
-    <meta property="og:title" content="Contact Academic Hub A-Level Lessons" />
-    <meta
-      property="og:description"
-      content="Send a message or chat on WhatsApp to book your A-Level lessons." 
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tanakamaziwisa-dev.github.io/a-level-lessons-website/contact.html" />
-    <meta property="og:image" content="https://tanakamaziwisa-dev.github.io/a-level-lessons-website/assets/favicon-32x32.png" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <title>Academic Hub | Contact</title>
+    <meta name="description" content="Contact Academic Hub to book A-Level tutoring in Zimbabwe via WhatsApp or form inquiry." />
+    <meta property="og:title" content="Academic Hub | Contact" />
+    <meta property="og:description" content="Start A-Level lessons with Academic Hub through quick WhatsApp booking and a validated contact form." />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
-  <header class="top-bar">
-    <div class="container navbar">
-      <a class="brand" href="index.html">Academic Hub A-Level Lessons</a>
+  <body data-page="contact">
+    <header class="top-bar"><div class="container navbar"><a class="brand" href="index.html">Academic Hub</a><button class="btn icon-btn nav-toggle" data-nav-toggle aria-expanded="false">☰</button><nav class="nav-links" data-nav><a data-page="home" href="index.html">Home</a><a data-page="subjects" href="subjects.html">Subjects</a><a data-page="pricing" href="pricing.html">Pricing</a><a data-page="about" href="about.html">About</a><a data-page="contact" href="contact.html">Contact</a></nav><div class="nav-group"><button class="btn icon-btn" data-dark-toggle>Dark mode</button><a class="btn btn-whatsapp" data-whatsapp>WhatsApp</a></div></div></header>
 
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false" data-nav-toggle>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
+    <main class="section">
+      <div class="container form-wrap">
+        <h1>Contact Academic Hub</h1>
+        <p class="lead">For the fastest response, message Academic Hub on WhatsApp at <span data-whatsapp-local></span>.</p>
+        <p><a class="btn btn-primary" data-whatsapp data-message="Hello Academic Hub, I'd like to enquire about A-Level tutoring.">Start WhatsApp Chat</a></p>
+        <p class="meta">Email (optional placeholder): hello@your-domain.com</p>
 
-      <div class="nav-panel" data-nav-panel>
-        <nav id="primary-nav" class="nav-links" aria-label="Main navigation">
-          <a href="index.html">Home</a>
-          <a href="subjects.html">Subjects</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-
-        <div class="toggle-wrapper">
-          <button class="toggle-btn" type="button" data-dark-toggle>Dark mode</button>
-          <a class="btn btn-whatsapp" href="https://wa.me/263777414157">Chat on WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-<main>
-      <section class="hero">
-        <div class="container hero-grid">
+        <form id="contact-form" class="grid" novalidate>
           <div>
-            <span class="badge">Contact</span>
-            <h1>Let’s plan your A-Level success.</h1>
-            <p class="muted">Send a quick message or chat directly on WhatsApp for faster replies.</p>
-            <a class="btn btn-primary" href="https://wa.me/263777414157">Chat on WhatsApp</a>
+            <label for="name">Name *</label>
+            <input id="name" name="name" type="text" />
+            <div class="error" aria-live="polite"></div>
           </div>
-          <div class="card fade-in">
-            <h3>Response time</h3>
-            <p class="muted">We reply within 24 hours, Monday to Saturday.</p>
-            <p class="muted">Online lessons available nationwide.</p>
+          <div>
+            <label for="contact-method">Email or phone (optional)</label>
+            <input id="contact-method" name="contact-method" type="text" placeholder="you@example.com or 07..." />
           </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <div class="section-title">
-            <h2>Contact form</h2>
-            <p class="muted">Tell us what you need and we will tailor your study plan.</p>
+          <div>
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" placeholder="Tell Academic Hub which subjects you need support with."></textarea>
+            <div class="error" aria-live="polite"></div>
           </div>
-          <form id="contact-form" class="grid grid-2" novalidate>
-            <!-- Personal details -->
-            <div class="form-control">
-              <label for="name">Full name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" required />
-            </div>
-            <div class="form-control">
-              <label for="contact">Email or phone</label>
-              <input id="contact" name="contact" type="text" placeholder="you@email.com or 07XXXXXXX" required />
-            </div>
-
-            <!-- Lesson details -->
-            <div class="form-control">
-              <label for="subject">Subject</label>
-              <input id="subject" name="subject" type="text" placeholder="E.g. Mathematics" required />
-            </div>
-            <div class="form-control">
-              <label for="lesson-type">Lesson type</label>
-              <select id="lesson-type" name="lesson-type" required>
-                <option value="">Select one</option>
-                <option value="online">Online</option>
-                <option value="in-person">In-person</option>
-              </select>
-            </div>
-
-            <div class="form-control">
-              <label for="location">City / Location</label>
-              <input id="location" name="location" type="text" placeholder="Harare" required />
-            </div>
-            <div class="form-control">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4" placeholder="Tell us your goals" required></textarea>
-            </div>
-
-            <!-- Submit -->
-            <div class="form-control" style="grid-column: 1 / -1;">
-              <button class="btn btn-primary" type="submit">Send message</button>
-              <p class="form-status form-note" aria-live="polite"></p>
-            </div>
-          </form>
-        </div>
-      </section>
+          <div><button class="btn btn-outline" type="submit">Validate Message</button></div>
+          <div class="form-status" aria-live="polite"></div>
+        </form>
+      </div>
     </main>
 
-    <footer>
-      <div class="container footer-grid">
-        <div>
-          <h3>Academic Hub A-Level Lessons</h3>
-          <p class="muted">Reach out any time to start your lessons.</p>
-        </div>
-        <div>
-          <h4>Quick Links</h4>
-          <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="subjects.html">Subjects</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="about.html">About</a>
-          </div>
-        </div>
-        <div>
-          <h4>Chat</h4>
-          <div class="footer-links">
-            <a href="https://wa.me/263777414157">WhatsApp</a>
-            <a href="#">Email (placeholder)</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <button class="back-to-top" type="button" aria-label="Back to top">↑ Top</button>
+    <footer><div class="container footer-grid"><div><h3>Academic Hub</h3><p class="muted">Professional, responsive A-Level tutoring across Zimbabwe.</p></div><div><h4>Pages</h4><div class="footer-links"><a href="index.html">Home</a><a href="subjects.html">Subjects</a><a href="pricing.html">Pricing</a><a href="about.html">About</a></div></div><div><h4>WhatsApp</h4><div class="footer-links"><a data-whatsapp>Chat with Academic Hub</a><span class="meta"><span data-whatsapp-local></span></span></div></div></div></footer>
+    <a class="btn floating-wa btn-whatsapp" data-whatsapp>WhatsApp</a>
+    <button class="back-to-top" data-back-to-top>↑ Top</button>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

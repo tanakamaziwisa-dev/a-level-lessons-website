@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://tanakamaziwisa-dev.github.io/a-level-lessons-website/sitemap.xml
+Sitemap: https://academichub.co.zw/sitemap.xml

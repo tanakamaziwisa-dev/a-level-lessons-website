@@ -1,156 +1,154 @@
-/*
-  Tanaka A-Level Lessons - Main JS
-  Handles navigation highlighting, dark mode, animations, and forms.
-*/
+const WHATSAPP_LOCAL = "0714814951";
+const WHATSAPP_INTL = "+263714814951";
 
-document.addEventListener("DOMContentLoaded", () => {
-  // --- Mobile Menu Toggle ---
-  const navToggle = document.querySelector('[data-nav-toggle]');
-  const navPanel = document.querySelector('[data-nav-panel]');
+const waNumberDigits = WHATSAPP_INTL.replace(/[^\d]/g, "");
+const waBaseUrl = `https://wa.me/${waNumberDigits}`;
 
-  if (navToggle && navPanel) {
-    navToggle.addEventListener('click', () => {
-      // This checks if the menu is currently open or closed
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', !expanded);
-      
-      // This adds the "active" class we just created in the CSS
-      navPanel.classList.toggle('active');
-    });
-  }
-  // --- Active navigation highlighting ---
-  const currentPath = window.location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll(".site-nav a, .main-nav a").forEach((link) => {
-    const href = link.getAttribute("href");
-    if (href === currentPath) {
-      document.querySelectorAll(".site-nav a, .main-nav a").forEach((a) => a.classList.remove("active"));
-      link.classList.add("active");
-    }
+function createWhatsAppLink(message = "Hello Academic Hub, I would like to book A-Level tutoring.") {
+  return `${waBaseUrl}?text=${encodeURIComponent(message)}`;
+}
+
+function wireWhatsAppLinks() {
+  document.querySelectorAll("[data-whatsapp]").forEach((link) => {
+    const message = link.dataset.message || undefined;
+    link.setAttribute("href", createWhatsAppLink(message));
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
   });
 
-  // --- Dark mode toggle ---
-  const toggleBtn = document.querySelector("[data-dark-toggle]");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const storedTheme = localStorage.getItem("tanaka-theme");
+  document.querySelectorAll("[data-whatsapp-local]").forEach((el) => {
+    el.textContent = WHATSAPP_LOCAL;
+  });
+}
 
-  const setTheme = (mode) => {
-    document.body.classList.toggle("dark", mode === "dark");
-    localStorage.setItem("tanaka-theme", mode);
-    if (toggleBtn) {
-      toggleBtn.textContent = mode === "dark" ? "Light mode" : "Dark mode";
-    }
+function initThemeToggle() {
+  const root = document.documentElement;
+  const toggle = document.querySelector("[data-dark-toggle]");
+  const key = "academicHubTheme";
+  const saved = localStorage.getItem(key);
+
+  if (saved === "dark") root.setAttribute("data-theme", "dark");
+
+  if (!toggle) return;
+  const updateText = () => {
+    const dark = root.getAttribute("data-theme") === "dark";
+    toggle.textContent = dark ? "Light mode" : "Dark mode";
   };
 
-  if (storedTheme) {
-    setTheme(storedTheme);
-  } else if (prefersDark) {
-    setTheme("dark");
-  }
+  toggle.addEventListener("click", () => {
+    const dark = root.getAttribute("data-theme") === "dark";
+    if (dark) {
+      root.removeAttribute("data-theme");
+      localStorage.setItem(key, "light");
+    } else {
+      root.setAttribute("data-theme", "dark");
+      localStorage.setItem(key, "dark");
+    }
+    updateText();
+  });
+  updateText();
+}
 
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-      const isDark = document.body.classList.contains("dark");
-      setTheme(isDark ? "light" : "dark");
+function initMobileNav() {
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const nav = document.querySelector("[data-nav]");
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.textContent = open ? "✕" : "☰";
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.textContent = "☰";
     });
-  }
+  });
+}
 
-  // --- Back to top button ---
-  const backToTop = document.querySelector(".back-to-top");
-  if (backToTop) {
-    window.addEventListener("scroll", () => {
-      backToTop.classList.toggle("show", window.scrollY > 400);
+function highlightCurrentPage() {
+  const page = document.body.dataset.page;
+  if (!page) return;
+  document.querySelectorAll("[data-nav] a").forEach((link) => {
+    if (link.dataset.page === page) link.classList.add("active");
+  });
+}
+
+function initScrollEffects() {
+  const items = document.querySelectorAll("[data-animate]");
+  if (!items.length) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        observer.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.15 });
 
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
+  items.forEach((item) => observer.observe(item));
+}
 
-  // --- Simple fade-in animations ---
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
+function initBackToTop() {
+  const button = document.querySelector("[data-back-to-top]");
+  if (!button) return;
 
-  document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+  const toggleButton = () => {
+    button.classList.toggle("show", window.scrollY > 340);
+  };
 
-  // --- Contact form validation ---
-// --- Unified Contact Form & WhatsApp Logic ---
-const contactForm = document.querySelector("#contact-form");
+  window.addEventListener("scroll", toggleButton);
+  toggleButton();
+  button.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+}
 
-if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
+function initContactFormValidation() {
+  const form = document.querySelector("#contact-form");
+  if (!form) return;
+
+  const name = form.querySelector("#name");
+  const message = form.querySelector("#message");
+  const status = form.querySelector(".form-status");
+
+  const setError = (input, text) => {
+    const error = input.parentElement.querySelector(".error");
+    error.textContent = text;
+  };
+
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
+    let hasError = false;
 
-    // 1. Collect form data
-    const name = document.getElementById("name").value.trim();
-    const contact = document.getElementById("contact").value.trim();
-    const subject = document.getElementById("subject").value.trim();
-    const lessonType = document.getElementById("lesson-type").value;
-    const location = document.getElementById("location").value.trim(); // Matches your HTML ID
-    const message = document.getElementById("message").value.trim();
-    const status = contactForm.querySelector(".form-status");
+    setError(name, "");
+    setError(message, "");
+    status.textContent = "";
 
-    // 2. Simple Validation
-    if (!name || !contact || !subject || !lessonType || !location || !message) {
-      status.textContent = "Please fill in all fields.";
-      status.style.color = "#d93025";
-      return;
+    if (!name.value.trim()) {
+      setError(name, "Please enter your name.");
+      hasError = true;
     }
 
-    // 3. Construct WhatsApp Message
-    const whatsappNumber = "263777414157";
-    const text = 
-      `New lesson enquiry from website:%0A%0A` +
-      `Name: ${encodeURIComponent(name)}%0A` +
-      `Contact: ${encodeURIComponent(contact)}%0A` +
-      `Subject: ${encodeURIComponent(subject)}%0A` +
-      `Lesson type: ${encodeURIComponent(lessonType)}%0A` +
-      `City: ${encodeURIComponent(location)}%0A%0A` +
-      `Message:%0A${encodeURIComponent(message)}`;
+    if (!message.value.trim()) {
+      setError(message, "Please enter a message.");
+      hasError = true;
+    }
 
-    // 4. Open WhatsApp and Reset
-    const url = `https://wa.me/${whatsappNumber}?text=${text}`;
-    window.open(url, "_blank");
-    
-    status.textContent = "Opening WhatsApp...";
-    status.style.color = "#1aa96b";
-    contactForm.reset();
+    if (hasError) return;
+
+    status.textContent = "Thanks! Your message is ready. Tap WhatsApp to send it instantly.";
+    form.reset();
   });
 }
-if (form) {
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const contact = document.getElementById("contact").value;
-
-    const subject = document.getElementById("subject")?.value || "Not selected";
-    const lessonType = document.getElementById("lessonType")?.value || "Not selected";
-    const city = document.getElementById("city")?.value || "Not provided";
-    const message = document.getElementById("message")?.value || "";
-
-    const whatsappNumber = "263777414157";
-
-    const text =
-      `New lesson enquiry from website:%0A%0A` +
-      `Name: ${name}%0A` +
-      `Contact: ${contact}%0A` +
-      `Subject: ${subject}%0A` +
-      `Lesson type: ${lessonType}%0A` +
-      `City: ${city}%0A%0A` +
-      `Message:%0A${message}`;
-
-    const url = `https://wa.me/${whatsappNumber}?text=${text}`;
-
-    window.open(url, "_blank");
-  });
-}
-  
+document.addEventListener("DOMContentLoaded", () => {
+  wireWhatsAppLinks();
+  initThemeToggle();
+  initMobileNav();
+  highlightCurrentPage();
+  initScrollEffects();
+  initBackToTop();
+  initContactFormValidation();
+});
