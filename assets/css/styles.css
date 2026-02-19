@@ -658,3 +658,23 @@ button {
     width: 100%;
   }
 }
+/* FIX: remove unwanted header line next to logo */
+header .logo::after,
+header .brand::after,
+.navbar .logo::after,
+.navbar .brand::after,
+.site-header .logo::after,
+.site-header .brand::after {
+  content: none !important;
+  display: none !important;
+}
+
+header hr,
+.navbar hr,
+.site-header hr,
+.header-divider,
+.nav-divider,
+.logo-line {
+  display: none !important;
+}
+
