@@ -692,4 +692,90 @@ header.top-bar .logo-line {
   display: none !important;
 }
 border-bottom: 1px solid rgba(0,0,0,0.06);
+/* =========================
+   PATCH: Fix navbar + mobile menu + section title stacking
+   Keep original look, just fixes responsiveness and “weird corner” issues.
+========================= */
+
+/* Prevent horizontal overflow on mobile */
+body {
+  overflow-x: hidden;
+}
+
+/* Add a hamburger button (works with the index.html patch I gave) */
+.nav-toggle {
+  display: none;
+  border: 1px solid var(--border);
+  background: var(--bg-alt);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Make nav behave properly on smaller screens */
+@media (max-width: 860px) {
+  .navbar {
+    position: relative;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Hide links by default on mobile */
+  .nav-links {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 10px);
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 10px;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+  }
+
+  /* When opened (JS adds .is-open) */
+  .nav-links.is-open {
+    display: grid;
+    gap: 8px;
+  }
+
+  .nav-links a {
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+
+  /* Stack right-side buttons a bit better */
+  .toggle-wrapper {
+    gap: 8px;
+  }
+
+  .btn,
+  .toggle-btn {
+    padding: 10px 14px;
+  }
+
+  /* Section titles should stack on mobile */
+  .section-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Fix “weird clipped corner” look (usually from shadow + sticky + overflow) */
+.top-bar,
+.nav-links,
+.btn,
+.toggle-btn,
+.nav-toggle {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  border-radius: inherit;
+}
 
