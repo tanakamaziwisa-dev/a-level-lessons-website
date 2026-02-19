@@ -677,4 +677,19 @@ header hr,
 .logo-line {
   display: none !important;
 }
+/* Remove the unwanted line in the top bar header */
+header.top-bar::before,
+header.top-bar::after {
+  content: none !important;
+  display: none !important;
+}
+
+header.top-bar hr,
+header.top-bar .divider,
+header.top-bar .spacer,
+header.top-bar .line,
+header.top-bar .logo-line {
+  display: none !important;
+}
+
 
