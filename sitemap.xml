@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://tanakamaziwisa-dev.github.io/a-level-lessons-website/index.html</loc>
-  </url>
-  <url>
-    <loc>https://tanakamaziwisa-dev.github.io/a-level-lessons-website/subjects.html</loc>
-  </url>
-  <url>
-    <loc>https://tanakamaziwisa-dev.github.io/a-level-lessons-website/pricing.html</loc>
-  </url>
-  <url>
-    <loc>https://tanakamaziwisa-dev.github.io/a-level-lessons-website/about.html</loc>
-  </url>
-  <url>
-    <loc>https://tanakamaziwisa-dev.github.io/a-level-lessons-website/contact.html</loc>
-  </url>
+  <url><loc>https://academichub.co.zw/index.html</loc></url>
+  <url><loc>https://academichub.co.zw/subjects.html</loc></url>
+  <url><loc>https://academichub.co.zw/pricing.html</loc></url>
+  <url><loc>https://academichub.co.zw/about.html</loc></url>
+  <url><loc>https://academichub.co.zw/contact.html</loc></url>
 </urlset>

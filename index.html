@@ -3,264 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tanaka A-Level Lessons | Trusted Zimbabwe Tutoring</title>
-    <meta
-      name="description"
-      content="Pass your A-Levels with confident, structured lessons. Tanaka A-Level Lessons offers online tutoring across Zimbabwe and limited in-person support."
-    />
-    <meta property="og:title" content="Tanaka A-Level Lessons" />
-    <meta
-      property="og:description"
-      content="Modern, trustworthy A-Level tutoring for Accounting, Business Studies, Economics, Mathematics, and English."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://example.com/index.html" />
-    <meta property="og:image" content="https://example.com/assets/img/og-image.jpg" />
-
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <title>Academic Hub | A-Level Tutoring in Zimbabwe</title>
+    <meta name="description" content="Academic Hub provides premium A-Level tutoring in Zimbabwe for Accounting, Business Studies, Economics, Mathematics, and English." />
+    <meta property="og:title" content="Academic Hub | A-Level Tutoring in Zimbabwe" />
+    <meta property="og:description" content="Improve confidence, test scores, and exam technique with professional A-Level tutoring from Academic Hub." />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-
-  <body>
-    <!-- Sticky navigation with CTA and dark mode toggle -->
+  <body data-page="home">
     <header class="top-bar">
       <div class="container navbar">
-        <a class="brand" href="index.html">Tanaka Academic Hub</a>
-
-        <!-- Mobile menu button -->
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-label="Open menu"
-          aria-expanded="false"
-          aria-controls="primary-nav"
-          data-nav-toggle
-        >
-          ☰
-        </button>
-
-        <nav class="nav-links" id="primary-nav" aria-label="Primary" data-nav>
-          <a href="index.html" aria-current="page">Home</a>
-          <a href="subjects.html">Subjects</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+        <a class="brand" href="index.html">Academic Hub</a>
+        <button class="btn icon-btn nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle menu">☰</button>
+        <nav class="nav-links" data-nav>
+          <a data-page="home" href="index.html">Home</a>
+          <a data-page="subjects" href="subjects.html">Subjects</a>
+          <a data-page="pricing" href="pricing.html">Pricing</a>
+          <a data-page="about" href="about.html">About</a>
+          <a data-page="contact" href="contact.html">Contact</a>
         </nav>
-
-        <div class="toggle-wrapper">
-          <button class="toggle-btn" type="button" data-dark-toggle>Dark mode</button>
-          <a class="btn btn-whatsapp" href="https://wa.me/2637XXXXXXXX">Chat on WhatsApp</a>
+        <div class="nav-group">
+          <button class="btn icon-btn" type="button" data-dark-toggle>Dark mode</button>
+          <a class="btn btn-whatsapp" data-whatsapp data-message="Hello Academic Hub, I want to start A-Level lessons.">WhatsApp</a>
         </div>
       </div>
     </header>
 
     <main>
-      <!-- Hero Section -->
       <section class="hero">
         <div class="container hero-grid">
           <div>
-            <span class="badge">Trusted A-Level Tutor</span>
-            <h1>Pass your A-Levels with confident, structured lessons.</h1>
-            <p>
-              Online lessons across Zimbabwe and limited in-person support. Build exam-ready confidence with a
-              tutor who knows the ZIMSEC syllabus and past paper trends.
-            </p>
-
-            <div class="grid hero-cta">
-              <a class="btn btn-primary" href="https://wa.me/2637XXXXXXXX">Chat on WhatsApp</a>
-              <a class="btn btn-outline" href="subjects.html">View subjects</a>
+            <span class="badge">Professional Zimbabwe A-Level Support</span>
+            <h1>Academic Hub helps students move from confusion to confident exam performance.</h1>
+            <p class="lead">Structured one-on-one tutoring focused on syllabus mastery, smart revision, and stronger test scores in key A-Level subjects.</p>
+            <div class="nav-group">
+              <a class="btn btn-primary" data-whatsapp data-message="Hello Academic Hub, I need help with my A-Level preparation.">Chat on WhatsApp</a>
+              <a class="btn btn-outline" href="subjects.html">View Subjects</a>
             </div>
           </div>
-
-          <div class="card fade-in">
-            <h3>Lesson highlights</h3>
-            <ul class="list">
-              <li><span>✓</span>Personalised study plans per subject</li>
-              <li><span>✓</span>Weekly progress tracking &amp; feedback</li>
-              <li><span>✓</span>Past paper walkthroughs</li>
-              <li><span>✓</span>WhatsApp support between lessons</li>
+          <article class="card" data-animate>
+            <h3>Why families trust Academic Hub</h3>
+            <ul>
+              <li>Targeted lesson plans aligned to learner gaps.</li>
+              <li>Past paper coaching that improves timing and structure.</li>
+              <li>Progress updates to keep students accountable.</li>
+              <li>Steady support that builds confidence before exams.</li>
             </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Results-focused benefits</h2>
+              <p class="muted">Every session is designed for real progress, not just extra homework.</p>
+            </div>
+          </div>
+          <div class="grid grid-2">
+            <article class="card" data-animate><h3>Clear concept mastery</h3><p class="muted">Students understand difficult topics deeply, so class tests and mocks stop feeling overwhelming.</p></article>
+            <article class="card" data-animate><h3>Exam-writing technique</h3><p class="muted">From essay structure to calculations, students learn how to answer exactly what markers award marks for.</p></article>
+            <article class="card" data-animate><h3>Confidence under pressure</h3><p class="muted">Regular timed practice helps students stay calm, accurate, and focused on exam day.</p></article>
+            <article class="card" data-animate><h3>Consistent tracking</h3><p class="muted">Progress is monitored weekly so weak areas are fixed early and improvements are measurable.</p></article>
           </div>
         </div>
       </section>
 
-      <!-- Key Benefits -->
-      <section>
+      <section class="section">
         <div class="container">
-          <div class="section-title">
-            <h2>Why students choose Tanaka A-Level Lessons</h2>
-            <p class="muted">Focused, supportive, and results-driven tutoring.</p>
+          <div class="section-head">
+            <div>
+              <h2>Subjects at Academic Hub</h2>
+              <p class="muted">Core A-Level support delivered online or face-to-face where available.</p>
+            </div>
+            <a class="btn btn-outline" href="subjects.html">See Full Subject Detail</a>
           </div>
-
           <div class="grid grid-3">
-            <div class="card fade-in">
-              <h3>Structured lessons</h3>
-              <p class="muted">Each session follows a clear plan aligned to the syllabus and your exam goals.</p>
-            </div>
-            <div class="card fade-in">
-              <h3>Exam strategy</h3>
-              <p class="muted">Learn how to answer ZIMSEC-style questions with confidence and speed.</p>
-            </div>
-            <div class="card fade-in">
-              <h3>Flexible delivery</h3>
-              <p class="muted">Choose online learning or limited in-person sessions in select locations.</p>
-            </div>
-            <div class="card fade-in">
-              <h3>Progress tracking</h3>
-              <p class="muted">Weekly checkpoints help you stay on track and improve consistently.</p>
-            </div>
-            <div class="card fade-in">
-              <h3>Supportive guidance</h3>
-              <p class="muted">Get mentorship, not just lessons. We focus on confidence too.</p>
-            </div>
+            <article class="card" data-animate><h3>Accounting</h3><p class="muted">Costing, ledgers, cash flow and final accounts.</p></article>
+            <article class="card" data-animate><h3>Business Studies</h3><p class="muted">Case studies, strategy, operations and evaluation writing.</p></article>
+            <article class="card" data-animate><h3>Economics</h3><p class="muted">Micro, macro, data response and policy essays.</p></article>
+            <article class="card" data-animate><h3>Mathematics</h3><p class="muted">Pure, statistics and exam-level problem solving.</p></article>
+            <article class="card" data-animate><h3>English</h3><p class="muted">Essay planning, argument structure and comprehension precision.</p></article>
           </div>
         </div>
       </section>
 
-      <!-- Subjects Preview -->
-      <section>
+      <section class="section">
         <div class="container">
-          <div class="section-title">
-            <h2>Popular A-Level subjects</h2>
-            <a class="btn btn-outline" href="subjects.html">Explore all subjects</a>
+          <h2>Student and parent testimonials</h2>
+          <div class="grid grid-2">
+            <article class="card testimonial" data-animate><p>“Accounting used to stress me out, especially cost accounting. After six weeks at Academic Hub, I could finally break down variances step by step and my test mark moved from 49% to 71%.”</p><strong>Tariro M.</strong></article>
+            <article class="card testimonial" data-animate><p>“I was failing Business Studies case questions because I just described things. I learned how to evaluate properly and my teacher noticed the difference immediately.”</p><strong>Simba K.</strong></article>
+            <article class="card testimonial" data-animate><p>“My daughter became much more confident in Economics. She now explains diagrams clearly and past papers became less scary for her.”</p><strong>Mrs. Dube</strong></article>
+            <article class="card testimonial" data-animate><p>“I struggled with essay flow in English. Academic Hub showed me a structure I can reuse, and my essay marks are now consistently above 70%.”</p><strong>Rudo P.</strong></article>
+            <article class="card testimonial" data-animate><p>“Math was my weakest subject. We focused on recurring mistakes in past papers and now I finish most sections on time.”</p><strong>Tinashe N.</strong></article>
+            <article class="card testimonial" data-animate><p>“Short, focused sessions plus WhatsApp follow-ups worked for me. I liked that we corrected errors quickly before they became habits.”</p><strong>Nyasha C.</strong></article>
+            <article class="card testimonial" data-animate><p>“My son improved from borderline to solid passes in both Accounting and Economics. The professionalism and consistency have been excellent.”</p><strong>Mr. Moyo</strong></article>
           </div>
 
-          <div class="grid grid-3">
-            <div class="card fade-in">
-              <h3>Accounting</h3>
-              <p class="muted">Master financial statements, analysis, and exam technique.</p>
+          <div class="cta-band" data-animate>
+            <div>
+              <h3>Ready to improve your A-Level results?</h3>
+              <p class="muted">Message Academic Hub on WhatsApp at <span data-whatsapp-local></span> to get started.</p>
             </div>
-            <div class="card fade-in">
-              <h3>Business Studies</h3>
-              <p class="muted">Understand case studies, strategy, and key concepts.</p>
-            </div>
-            <div class="card fade-in">
-              <h3>Economics</h3>
-              <p class="muted">Build strong analytical skills for data response and essays.</p>
-            </div>
-            <div class="card fade-in">
-              <h3>Mathematics</h3>
-              <p class="muted">Step-by-step problem solving with exam-focused practice.</p>
-            </div>
-            <div class="card fade-in">
-              <h3>English</h3>
-              <p class="muted">Improve essay structure, comprehension, and critical analysis.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Testimonials -->
-      <section>
-        <div class="container">
-          <div class="section-title">
-            <h2>What students say</h2>
-            <p class="muted">Placeholders for future testimonials.</p>
-          </div>
-
-          <div class="grid grid-3">
-            <div class="card testimonial fade-in">
-              <p>“I improved my grades within one term. The lessons were clear and motivating.”</p>
-              <strong>- Student A</strong>
-            </div>
-            <div class="card testimonial fade-in">
-              <p>“Great explanations and past paper support. I felt prepared for every test.”</p>
-              <strong>- Student B</strong>
-            </div>
-            <div class="card testimonial fade-in">
-              <p>“The weekly roadmap kept me organised. Highly recommend!”</p>
-              <strong>- Student C</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQ -->
-      <section class="faq">
-        <div class="container">
-          <div class="section-title">
-            <h2>Frequently asked questions</h2>
-            <p class="muted">Everything you need to know before booking.</p>
-          </div>
-
-          <div class="grid">
-            <details class="fade-in">
-              <summary>Do you offer online lessons across Zimbabwe?</summary>
-              <p class="muted">Yes. Most students learn online with interactive tools and shared notes.</p>
-            </details>
-            <details class="fade-in">
-              <summary>Which curriculum do you follow?</summary>
-              <p class="muted">Lessons align with ZIMSEC and Cambridge A-Level expectations.</p>
-            </details>
-            <details class="fade-in">
-              <summary>Can I book a trial lesson?</summary>
-              <p class="muted">Absolutely. We can start with a short assessment and planning call.</p>
-            </details>
-            <details class="fade-in">
-              <summary>How do you support past paper practice?</summary>
-              <p class="muted">We work through past papers every week to build exam technique.</p>
-            </details>
-            <details class="fade-in">
-              <summary>Do you provide notes and homework?</summary>
-              <p class="muted">Yes, curated notes and weekly tasks are shared after each lesson.</p>
-            </details>
-            <details class="fade-in">
-              <summary>How do I pay for lessons?</summary>
-              <p class="muted">Payments can be arranged by EcoCash or bank transfer. Details on request.</p>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <!-- Email Capture -->
-      <section>
-        <div class="container">
-          <div class="cta-panel fade-in">
-            <h2>Get free A-Level tips each month</h2>
-            <p>Join the email list for study plans, exam reminders, and revision strategies.</p>
-
-            <form id="email-capture" class="grid grid-2" novalidate>
-              <div class="form-control">
-                <label for="email">Email address</label>
-                <input id="email" name="email" type="email" placeholder="you@example.com" required />
-              </div>
-              <div class="form-control form-actions">
-                <button class="btn btn-outline" type="submit">Join the list</button>
-              </div>
-              <div class="form-status form-note" aria-live="polite"></div>
-            </form>
+            <a class="btn btn-primary" data-whatsapp data-message="Hello Academic Hub, I would like to book a consultation.">Start on WhatsApp</a>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
     <footer>
       <div class="container footer-grid">
-        <div>
-          <h3>Tanaka A-Level Lessons</h3>
-          <p class="muted">Helping Zimbabwean students achieve top A-Level results with confidence.</p>
-        </div>
-        <div>
-          <h4>Quick Links</h4>
-          <div class="footer-links">
-            <a href="subjects.html">Subjects</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-          </div>
-        </div>
-        <div>
-          <h4>Connect</h4>
-          <div class="footer-links">
-            <a href="https://wa.me/2637XXXXXXXX">WhatsApp</a>
-            <a href="#">Instagram (placeholder)</a>
-            <a href="#">Facebook (placeholder)</a>
-          </div>
-        </div>
+        <div><h3>Academic Hub</h3><p class="muted">Premium A-Level tutoring in Zimbabwe with a clear focus on confidence, results, and professionalism.</p></div>
+        <div><h4>Pages</h4><div class="footer-links"><a href="index.html">Home</a><a href="subjects.html">Subjects</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="contact.html">Contact</a></div></div>
+        <div><h4>Contact</h4><div class="footer-links"><a data-whatsapp>WhatsApp Academic Hub</a><span class="meta">Number: <span data-whatsapp-local></span></span></div></div>
       </div>
     </footer>
 
-    <button class="back-to-top" type="button" aria-label="Back to top" data-back-to-top>↑ Top</button>
+    <a class="btn floating-wa btn-whatsapp" data-whatsapp aria-label="Open WhatsApp chat">WhatsApp</a>
+    <button class="back-to-top" data-back-to-top aria-label="Back to top">↑ Top</button>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
